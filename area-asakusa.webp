@@ -1,0 +1,43 @@
+# 公開チェックリスト
+
+## ローカル
+
+- [ ] `npm ci`
+- [ ] `npm run test:all`
+- [ ] lint
+- [ ] typecheck
+- [ ] content validation
+- [ ] unit test
+- [ ] static build
+- [ ] internal link
+- [ ] external link review
+- [ ] SEO
+- [ ] security / legacy string
+- [ ] Playwright 1440 / 1024 / 768 / 375 / 320
+- [ ] keyboard / 200％
+- [ ] axe
+- [ ] Lighthouse
+
+## GitHub
+
+- [ ] 認証ユーザーが`nobuja0428`
+- [ ] 反映先が`nobuja0428/osanpo-club-tokyo`
+- [ ] 既存内容を置換する権限と意思を確認
+- [ ] Pages SourceをGitHub Actionsに設定
+- [ ] CI quality成功
+- [ ] deploy成功
+
+## 公開後
+
+- [ ] `https://nobuja0428.github.io/osanpo-club-tokyo/`
+- [ ] CSSと画像
+- [ ] 主要ページ
+- [ ] 検索・絞り込み・0件復帰
+- [ ] お気に入り・共有
+- [ ] `sitemap.xml`
+- [ ] `robots.txt`
+- [ ] canonical
+- [ ] 404
+- [ ] コンソールエラー0
+
+未実施項目にはチェックを付けません。
