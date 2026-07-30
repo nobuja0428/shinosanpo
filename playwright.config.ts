@@ -2,7 +2,7 @@ import { defineConfig } from "@playwright/test";
 import chromium from "@sparticuz/chromium";
 import site from "./site.config.json" with { type: "json" };
 
-const executablePath = "/tmp/osanpo-chromium-runtime/chromium";
+const executablePath = "/tmp/shinosanpo-chromium-runtime/chromium";
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -21,9 +21,9 @@ export default defineConfig({
       args: chromium.args.filter((arg) => !["--single-process", "--no-zygote"].includes(arg)),
       env: {
         ...process.env,
-        HOME: "/tmp/osanpo-chromium-home",
-        XDG_CACHE_HOME: "/tmp/osanpo-chromium-cache",
-        LD_LIBRARY_PATH: "/tmp/osanpo-chromium-runtime/lib:/tmp/osanpo-chromium-runtime"
+        HOME: "/tmp/shinosanpo-chromium-home",
+        XDG_CACHE_HOME: "/tmp/shinosanpo-chromium-cache",
+        LD_LIBRARY_PATH: "/tmp/shinosanpo-chromium-runtime/lib:/tmp/shinosanpo-chromium-runtime"
       }
     }
   },

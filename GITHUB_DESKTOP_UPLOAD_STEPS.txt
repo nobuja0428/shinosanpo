@@ -1,0 +1,54 @@
+おさんぽクラブ東京 GitHub Desktop反映手順
+===========================================
+
+対象:
+  nobuja0428/shinosanpo
+
+重要:
+  ・GitHubブラウザ画面の「Upload files」は使用しません。
+  ・ZIPファイル自体をリポジトリへ入れません。
+  ・展開後のsrc、public、.githubの階層を維持します。
+  ・既存mainのバックアップを作成してから置き換えます。
+
+手順:
+  1. GitHub Desktopで File > Clone repository を開き、
+     nobuja0428/shinosanpo をcloneします。
+  2. clone先フォルダー全体を、日時付きの別フォルダーへコピーして
+     ローカルバックアップを作成します。
+  3. cloneしたリポジトリのmainを取得し、既存ファイルを削除します。
+     .gitフォルダーは削除しません。
+  4. shinosanpo-github-upload-ready.zipを、リポジトリとは別の
+     新しいフォルダーへ展開します。
+  5. 展開後の「中身」をリポジトリ直下へコピーします。
+     直下にpackage.json、src、public、.githubが見える状態にします。
+  6. 次の階層をエクスプローラーで確認します。
+       .github/workflows/ci.yml
+       .github/workflows/deploy-pages.yml
+       src/app/page.tsx
+       src/app/courses/[slug]/page.tsx
+       src/components/Breadcrumbs.tsx
+       public/images
+  7. GitHub DesktopのChangesで、ファイルが平坦化されていないこと、
+     page (1).tsx等がないこと、ZIP自体が追加されていないことを確認します。
+  8. 可能ならリポジトリ直下で次を実行します。
+       npm ci
+       npm run test:all
+  9. Summaryへ次を入力してcommitします。
+       Rebuild shinosanpo with correct repository structure
+ 10. Push originを実行します。
+ 11. GitHubのActionsでCIとPages用qualityが成功したことを確認します。
+     失敗している場合は公開を進めません。
+ 12. Settings > Pages > Build and deployment > Sourceを
+     GitHub Actionsに設定します。
+ 13. deploy成功後、次を確認します。
+       https://nobuja0428.github.io/shinosanpo/
+       https://nobuja0428.github.io/shinosanpo/courses/koenji-first/
+       https://nobuja0428.github.io/shinosanpo/search/
+       https://nobuja0428.github.io/shinosanpo/sitemap.xml
+       https://nobuja0428.github.io/shinosanpo/robots.txt
+
+公開後の確認:
+  CSS、画像、canonical、OGP、内部リンク、モバイルナビ、
+  検索、絞り込み、0件復帰、お気に入り、共有、404、
+  画面幅1440/1024/768/375/320px、200％拡大、
+  コンソールエラー0を確認します。
